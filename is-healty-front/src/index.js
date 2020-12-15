@@ -4,10 +4,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProductContext from './context/productContext';
+import Context from './context/authContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Context.Provider>
+      <ProductContext.Provider>
+        <App />
+      </ProductContext.Provider>
+    </Context.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
